@@ -42,3 +42,5 @@ class Business extends Component {
         )
     }
 }
+
+export default Business
