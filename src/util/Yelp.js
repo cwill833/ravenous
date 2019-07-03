@@ -1,7 +1,6 @@
 const YELP_KEY = process.env.YELP_KEY;
 
 const Yelp = {
-
     search(term, location, sortBy){
         const endpoint = `https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sortBy}&limit=20`
         return fetch(endpoint, {
@@ -9,7 +8,6 @@ const Yelp = {
                 Authorization: `Bearer ${YELP_KEY}`
             },
             mode: 'no-cors'
-
         }).then(response=>{
             return response.json()
         }).then(jsonResponse=>{
@@ -32,5 +30,6 @@ const Yelp = {
         })
     }
 }
+  
 
 export default Yelp
