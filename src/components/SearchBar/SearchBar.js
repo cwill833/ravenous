@@ -49,7 +49,13 @@ class SearchBar extends Component {
     renderSortByOptions(){
         return Object.keys(this.sortByOptions).map(sortByOption =>{
             let sortByOptionValue = this.sortByOptions[sortByOption]
-            return <li onClick={this.handleSortByChange.bind(this, sortByOptionValue)} className={this.getSortByClass(sortByOptionValue)} key={sortByOptionValue}>{sortByOption}</li>
+            return (
+                <li 
+                    onClick={this.handleSortByChange.bind(this, sortByOptionValue)} 
+                    className={this.getSortByClass(sortByOptionValue)} 
+                    key={sortByOptionValue}>{sortByOption}
+                </li>
+            )
         })
     }
 
@@ -63,8 +69,14 @@ class SearchBar extends Component {
                 </ul>
             </div>
             <div className="SearchBar-fields">
-                <input onChange={this.handleTermChange} placeholder="Search Businesses" />
-                <input onChange={this.handleLocationChange} placeholder="Where?" />
+                <input 
+                onChange={this.handleTermChange} 
+                placeholder="Search Businesses" 
+                />
+                <input 
+                onChange={this.handleLocationChange} 
+                placeholder="Where?" 
+                />
             </div>
             <div className="SearchBar-submit">
                 <a onClick={this.handleSearch}>Let's Go</a>
